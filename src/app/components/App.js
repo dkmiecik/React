@@ -12,9 +12,11 @@ export default class App extends Component {
     }
 
     render () {
+        console.log('aaaaaaaaaaaaaaaaa')
+        console.log(this.props)
         return ( <div>
             <List />
             {this.props.children}
-            </div>)
+        </div>)
     }
 }

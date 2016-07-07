@@ -21,6 +21,7 @@ var config = {
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin(),
         new ExtractTextPlugin('app.css', {allChunks: true}),
         new HtmlWebpackPlugin({
             title: 'React Test Task',

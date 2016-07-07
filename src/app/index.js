@@ -1,14 +1,6 @@
 import '../../assets/stylesheets/index.css'
 import React from 'react'
-import { render } from 'react-dom'
-import { Router, Route, browserHistory } from 'react-router'
-import App from './components/App'
-import Repo from './containers/RepoContainer'
+import { browserHistory } from 'react-router'
+import Root from '../Root'
 
-render((
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-            <Route path="repo/:repoId" component={Repo}/>
-        </Route>
-    </Router>
-), document.getElementById('app'))
+React.render(<Root history={browserHistory} />, document.getElementById('app'))
