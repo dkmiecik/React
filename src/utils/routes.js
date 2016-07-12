@@ -1,14 +1,14 @@
 import React from 'react'
 import { Route } from 'react-router'
 
-//import RepoContainer from '../app/containers/RepoContainer'
-import App from '../app/components/App'
-import Repo from '../app/components/Repo'
-import Info from '../app/components/Info'
+import * as containers from '../app/containers'
+import * as components from '../app/components'
 
+const { App, Info } = components
+const { RepoContainer } = containers
 export default (
     <Route component={App}>
         <Route path="/" component={Info}/>
-        <Route path="/repo/:repoId" component={Repo}/>
+        <Route path="/repo/:repoId" component={RepoContainer}/>
     </Route>
 )

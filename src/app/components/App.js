@@ -1,10 +1,10 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import List from './List'
 
 export default class App extends Component {
 
     static propTypes = {
-        children: PropTypes.any
+        children: React.PropTypes.any
     }
 
     constructor (props, context) {
@@ -12,11 +12,10 @@ export default class App extends Component {
     }
 
     render () {
-        console.log('aaaaaaaaaaaaaaaaa')
-        console.log(this.props)
-        return ( <div>
+        return ( <div className="appContent">
             <List />
             {this.props.children}
+            <span className="author">Autor: Damian Kmiecik.</span>
         </div>)
     }
 }
