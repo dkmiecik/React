@@ -1,0 +1,92 @@
+div.appContent {
+    width: 60%;
+    margin-left: 20%;
+}
+div.menu {
+    height: auto;
+}
+
+div.menu ul.repoMenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+div.menu ul.repoMenu li {
+    float: left;
+    width: 20%;
+}
+
+div.menu ul.repoMenu li.info {
+    width: 100%;
+}
+
+div.menu ul.repoMenu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+div.menu ul.repoMenu li:hover {
+    background-color: #111;
+    cursor: pointer;
+}
+
+a.active {
+    background-color: #4186ff;
+}
+
+div.infoContent {
+    height: auto;
+}
+
+div.infoContent h1 {
+    margin: auto;
+}
+
+div.infoContent ul {
+    list-style-type: none;
+}
+
+div.infoContent ul li:before {
+    position: absolute;
+    margin-left: -1.3em;
+    font-weight: bold;
+}
+div.infoContent ul li.passed:before {
+    content: "\2713";
+    color: darkgreen;
+}
+div.infoContent ul li.failed:before {
+    content: "\2717";
+    color: crimson;
+}
+div.infoContent ul li.failed a {
+    color: crimson;
+    cursor: pointer;
+    font-weight: bold;
+}
+div.repoContent {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+div.success {
+    color: darkgreen;
+}
+div.pending {
+    color: yellow;
+}
+div.failure {
+    color: darkred;
+}
+span.author {
+    position: absolute;
+    bottom: 10px;
+    right: 20%;
+}
