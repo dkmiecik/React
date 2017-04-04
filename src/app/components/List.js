@@ -11,10 +11,9 @@ export default class List extends Component {
 
     _handleClick (e) {
         let a = document.getElementsByTagName('a')
-
-        for (let i in a)
-            if (a[i].className === 'active')
-                a[i].className = ''
+        Array.from(a).forEach((obj) => {
+            obj.className = obj.className === 'active' ? '' : null
+        })
         e.target.className = 'active'
     }
 

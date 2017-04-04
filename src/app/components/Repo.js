@@ -13,7 +13,9 @@ export default class Repo extends Component {
         super(props)
         this.state = {
             repoStatus: '',
-            repoName: ''
+            repoName: '',
+            repoId: '',
+            repoOwner: ''
         }
     }
 
@@ -30,18 +32,21 @@ export default class Repo extends Component {
 
     getRepoStatus (repoId) {
         const { actions } = this.props
-        let owner
-        for (let i in repos)
-            if (repos[i].repo === repoId) {
-                owner = repos[i].owner
-                this.state.repoName = repos[i].name
+        this.state.repoId = repoId
+        for (let i in repos) {
+            if (repos.hasOwnProperty(i)) {
+                if (repos[i].repo === repoId) {
+                    this.state.repoOwner = repos[i].owner
+                    this.state.repoName = repos[i].name
+                }
             }
-        actions.fetchRepoDetails(owner, repoId)
+        }
+        actions.fetchRepoDetails(this.state.repoOwner, repoId)
     }
 
     render () {
         const { repository } = this.props
-        this.state.repoStatus = repository.get('status')
+        this.state.repoStatus = repository.get(this.state.repoId) ? repository.get(this.state.repoId).status : ''
 
         return (<div className="repoContent">
                     <div className="repoName"> { this.state.repoName }</div>
